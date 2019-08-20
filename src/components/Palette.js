@@ -16,9 +16,9 @@ class Palette extends Component {
   }
 
   changeFormat(val) {
-    console.log(val);
     this.setState({ format: val });
   }
+
   render() {
     const { colors } = this.props.palette;
     const { level, format } = this.state;
