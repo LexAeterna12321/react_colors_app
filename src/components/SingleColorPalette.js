@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ColorBox from "./ColorBox";
 import Navbar from "./Navbar";
 import PaletteFooter from "./PaletteFooter";
+import { Link } from "react-router-dom";
 export class SingleColorPalette extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,7 @@ export class SingleColorPalette extends Component {
     let shades = [];
     const allColors = palette.colors;
 
+    // eslint-disable-next-line no-unused-vars
     for (let key in allColors) {
       shades = shades.concat(
         allColors[key].filter(color => color.id === colorToFilterBy)
@@ -29,20 +31,26 @@ export class SingleColorPalette extends Component {
   }
 
   render() {
-    const { paletteName, emoji } = this.props.palette;
+    const { paletteName, emoji, id } = this.props.palette;
     const colorBoxes = this._shades.map(color => (
       <ColorBox
-        key={color.id}
+        key={color.name}
         name={color.name}
         background={color[this.state.format]}
         showLink={false}
       />
     ));
-    console.log(this.props);
     return (
-      <div className="Palette">
+      <div className="SingleColorPalette Palette">
         <Navbar changeFormat={this.changeFormat} showingAllColors={false} />
-        <div className="Palette-colors">{colorBoxes}</div>
+        <div className="Palette-colors">
+          {colorBoxes}
+          <div className="go-back ColorBox">
+            <Link to={`/palette/${id}`} className="back-button">
+              Go back
+            </Link>
+          </div>
+        </div>
         <PaletteFooter paletteName={paletteName} emoji={emoji} />
       </div>
     );
