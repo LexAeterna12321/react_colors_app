@@ -27,6 +27,11 @@ function App() {
           />
         )}
       />
+      <Route
+        path="/palette/:paletteId/:colorId"
+        exact
+        render={() => <h1>single color page</h1>}
+      />
     </Switch>
   );
 }
