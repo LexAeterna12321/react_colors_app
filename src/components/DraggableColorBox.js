@@ -11,7 +11,7 @@ const styles = {
     position: "relative",
     cursor: "pointer",
     textTransform: "uppercase",
-    marginBottom: "-3.9px",
+    marginBottom: "-6px",
     "&:hover button": {
       opacity: 1
     },
