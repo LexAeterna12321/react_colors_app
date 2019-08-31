@@ -25,6 +25,7 @@ const useStyles = makeStyles(theme => ({
     }),
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     height: "64px"
   },
   appBarShift: {
@@ -38,11 +39,20 @@ const useStyles = makeStyles(theme => ({
   menuButton: {
     marginRight: theme.spacing(2)
   },
-  navBtns: {}
+  navBtns: {
+    marginRight: "1rem"
+  },
+  button: {
+    margin: "0 0.5rem"
+  },
+  link: {
+    textDecoration: "none"
+  }
 }));
 
 const PaletteFormNav = ({ open, setOpen, palettes, handleSubmit }) => {
   const [newPaletteName, setNewPaletteName] = useState("");
+  const [isFormShowing, setIsFormShowing] = useState(false);
   const classes = useStyles();
 
   useEffect(() => {
@@ -86,17 +96,31 @@ const PaletteFormNav = ({ open, setOpen, palettes, handleSubmit }) => {
           </Typography>
         </Toolbar>
         <div className={classes.navBtns}>
+          <Link to="/" className={classes.link}>
+            <Button
+              variant="contained"
+              color="secondary"
+              className={classes.button}
+            >
+              Go Back
+            </Button>
+          </Link>
+          <Button
+            className={classes.button}
+            variant="outlined"
+            color="primary"
+            onClick={() => setIsFormShowing(!isFormShowing)}
+          >
+            Open form dialog
+          </Button>
+        </div>
+        {isFormShowing && (
           <PaletteMetaForm
             handleChange={handleChange}
             handleSubmit={handleSubmit}
             newPaletteName={newPaletteName}
           />
-          <Link to="/">
-            <Button variant="contained" color="secondary">
-              Go Back
-            </Button>
-          </Link>
-        </div>
+        )}
       </AppBar>
     </div>
   );
