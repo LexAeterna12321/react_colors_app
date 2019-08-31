@@ -9,7 +9,7 @@ export const ColorBoxStyles = {
     position: "relative",
     cursor: "pointer",
     textTransform: "uppercase",
-    marginBottom: "-3.9px",
+    marginBottom: "-4px",
     "&:hover button": {
       opacity: 1
     }

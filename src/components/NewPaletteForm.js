@@ -83,11 +83,12 @@ const NewPaletteForm = props => {
     setOpen(false);
   }
 
-  const handleSubmit = newPaletteName => {
+  const handleSubmit = (newPaletteName, newEmoji) => {
     const newPalette = {
       paletteName: newPaletteName,
       id: newPaletteName.toLowerCase().replace(/ /g, "-"),
-      colors
+      colors,
+      emoji: newEmoji
     };
     props.savePalette(newPalette);
     props.history.push("/");
