@@ -19,6 +19,7 @@ export const PaletteListStyles = {
     alignItems: "center",
     width: "100%",
     color: "white",
+    margin: ".7rem 0",
     "& a": {
       color: "inherit"
     }
