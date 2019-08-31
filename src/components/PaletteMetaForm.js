@@ -74,7 +74,7 @@ const PaletteMetaForm = ({
     ) : (
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle id="form-dialog-title">
-          Click on emocji to save your palette
+          Click on emoji to save your palette
         </DialogTitle>{" "}
         <Picker onSelect={savePalette} title="Pick emoji..." emoji="point_up" />
         <DialogActions>
