@@ -74,7 +74,7 @@ const useStyles = makeStyles(theme => ({
 
 const NewPaletteForm = props => {
   const classes = useStyles();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [colors, setColors] = useState(props.palettes[0].colors);
 
   const isPaletteFull = colors.length >= props.maxColors;
