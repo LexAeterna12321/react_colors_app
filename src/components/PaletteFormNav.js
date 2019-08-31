@@ -71,6 +71,13 @@ const PaletteFormNav = ({ open, setOpen, palettes, handleSubmit }) => {
     setNewPaletteName(e.target.value);
   };
 
+  const showForm = () => {
+    setIsFormShowing(true);
+  };
+  const hideForm = () => {
+    setIsFormShowing(false);
+  };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -109,9 +116,9 @@ const PaletteFormNav = ({ open, setOpen, palettes, handleSubmit }) => {
             className={classes.button}
             variant="outlined"
             color="primary"
-            onClick={() => setIsFormShowing(!isFormShowing)}
+            onClick={showForm}
           >
-            Open form dialog
+            Save Your Palette
           </Button>
         </div>
         {isFormShowing && (
@@ -119,6 +126,7 @@ const PaletteFormNav = ({ open, setOpen, palettes, handleSubmit }) => {
             handleChange={handleChange}
             handleSubmit={handleSubmit}
             newPaletteName={newPaletteName}
+            hideForm={hideForm}
           />
         )}
       </AppBar>
