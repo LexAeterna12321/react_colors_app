@@ -39,15 +39,13 @@ export const MiniPaletteStyles = {
     position: "relative",
     marginBottom: "-4px"
   },
-  delete: {
-    width: "40px",
+
+  deleteIcon: {
     position: "absolute",
     top: 0,
     right: 0,
-    zIndex: 2
-  },
-  deleteIcon: {
-    color: "white",
+    zIndex: 2,
+    color: "#ccc",
     backgroundColor: "#eb3d30",
     width: "40px",
     height: "40px",
@@ -55,6 +53,9 @@ export const MiniPaletteStyles = {
     padding: "7px",
     boxShadow: "-1px 1px 3px 2px rgba(0,0,0,.5)",
     opacity: 0,
-    transition: "opacity .2s"
+    transition: "opacity .2s,color .2s",
+    "&:hover": {
+      color: "#fff"
+    }
   }
 };

@@ -4,7 +4,15 @@ import { withStyles } from "@material-ui/styles";
 import { MiniPaletteStyles } from "./styles";
 
 function MiniPalette(props) {
-  const { classes, paletteName, emoji, colors, goToPalette } = props;
+  const {
+    classes,
+    paletteName,
+    emoji,
+    colors,
+    goToPalette,
+    deletePalette,
+    id
+  } = props;
 
   const miniColorBoxes = colors.map(color => (
     <div
@@ -14,11 +22,18 @@ function MiniPalette(props) {
     />
   ));
 
+  const handlePaletteDelete = e => {
+    e.stopPropagation();
+    deletePalette(id);
+  };
+
   return (
     <div className={classes.root} onClick={goToPalette}>
-      <div className={classes.delete}>
-        <DeleteForeverSharpIcon className={classes.deleteIcon} />
-      </div>
+      <DeleteForeverSharpIcon
+        className={classes.deleteIcon}
+        onClick={handlePaletteDelete}
+      />
+
       <div className={classes.colors}>{miniColorBoxes}</div>
       <h5 className={classes.title}>
         {paletteName}
