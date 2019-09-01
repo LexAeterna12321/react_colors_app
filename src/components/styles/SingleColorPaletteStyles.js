@@ -1,3 +1,4 @@
+import sizes from "./sizes";
 export const SingleColorPaletteStyles = {
   goBackBox: {
     marginBottom: "-3.9px",
@@ -5,7 +6,19 @@ export const SingleColorPaletteStyles = {
     backgroundColor: "black",
     position: "relative",
     width: "20%",
-    display: "inline-block"
+    display: "inline-block",
+    [sizes.down("lg")]: {
+      width: "50%",
+      height: "33.3333333%"
+    },
+    [sizes.down("md")]: {
+      width: "50%",
+      height: "20%"
+    },
+    [sizes.down("xs")]: {
+      width: "100%",
+      height: "10%"
+    }
   },
   goBackButton: {
     width: "100px",
