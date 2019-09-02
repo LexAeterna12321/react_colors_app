@@ -1,3 +1,5 @@
+import sizes from "./sizes";
+
 export const NavbarStyles = {
   Navbar: {
     display: "flex",
@@ -18,6 +20,9 @@ export const NavbarStyles = {
     "& a": {
       textDecoration: "none",
       color: "black"
+    },
+    [sizes.down("xs")]: {
+      display: "none"
     }
   },
 
@@ -41,6 +46,9 @@ export const NavbarStyles = {
 
     "&  .rc-slider-rail": {
       height: "8px"
+    },
+    [sizes.down("md")]: {
+      width: "150px"
     }
   },
 

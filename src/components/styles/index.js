@@ -5,3 +5,4 @@ export * from "./MiniPaletteStyles";
 export * from "./ColoBoxStyles";
 export * from "./NavbarStyles";
 export * from "./PaletteFooterStyles";
+export * from "./DraggableColorBoxStyles";

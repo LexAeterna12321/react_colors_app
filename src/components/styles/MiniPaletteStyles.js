@@ -9,6 +9,9 @@ export const MiniPaletteStyles = {
     cursor: "pointer",
     "&:hover svg": {
       opacity: 1
+    },
+    "&:hover": {
+      boxShadow: "0 0 3px 2px rgba(0,0,0,.5)"
     }
   },
   colors: {
