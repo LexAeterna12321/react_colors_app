@@ -9,6 +9,9 @@
 // // Extra large devices (large desktops, 1200px and up)
 // @media (min-width: 1200px) 75em { ... }
 
+// // Massive Extra large devices (large desktops, 1400px and up)
+// @media (min-width: 1600px) 100em { ... }
+
 export default {
   // for mobile-first approach -> blank - desktop to mobile approach taken
   up() {},
@@ -18,7 +21,8 @@ export default {
       xs: "36em",
       sm: "48em",
       md: "62em",
-      lg: "75em"
+      lg: "75em",
+      xl: "100em"
     };
     return `@media (max-width: ${sizes[size]})`;
   }

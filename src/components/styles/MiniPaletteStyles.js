@@ -7,6 +7,8 @@ export const MiniPaletteStyles = {
     position: "relative",
     overflow: "hidden",
     cursor: "pointer",
+    transition: "all .2s",
+
     "&:hover svg": {
       opacity: 1
     },

@@ -1,3 +1,5 @@
+import sizes from "./sizes";
+
 export const PaletteListStyles = {
   root: {
     backgroundColor: "royalblue",
@@ -11,7 +13,13 @@ export const PaletteListStyles = {
     display: "flex",
     alignItems: "flex-start",
     flexDirection: "column",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    [sizes.down("xl")]: {
+      width: "80%"
+    },
+    [sizes.down("xs")]: {
+      width: "75%"
+    }
   },
   nav: {
     display: "flex",
@@ -28,6 +36,12 @@ export const PaletteListStyles = {
     width: "100%",
     display: "grid",
     gridTemplateColumns: "repeat(3,30%)",
-    gridGap: "5%"
+    gridGap: "2rem",
+    [sizes.down("md")]: {
+      gridTemplateColumns: "repeat(2,1fr)"
+    },
+    [sizes.down("xs")]: {
+      gridTemplateColumns: "1fr"
+    }
   }
 };
