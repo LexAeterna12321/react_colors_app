@@ -1,13 +1,18 @@
 import sizes from "./sizes";
-
+import bg from "./bg.svg";
 export const PaletteListStyles = {
   root: {
-    backgroundColor: "royalblue",
     height: "100vh",
     display: "flex",
     alignItems: "flex-start",
-    justifyContent: "center"
+    justifyContent: "center",
+    backgroundColor: "#000022",
+    /* background by SVGBackgrounds.com */
+    backgroundImage: `url(${bg})`,
+    overflow: "scroll",
+    backgroundSize: "cover"
   },
+
   container: {
     width: "50%",
     display: "flex",
@@ -32,10 +37,11 @@ export const PaletteListStyles = {
       color: "inherit"
     }
   },
+  heading: { fontSize: "2rem" },
   palettes: {
     width: "100%",
     display: "grid",
-    gridTemplateColumns: "repeat(3,30%)",
+    gridTemplateColumns: "repeat(3,1fr)",
     gridGap: "2rem",
     [sizes.down("md")]: {
       gridTemplateColumns: "repeat(2,1fr)"
