@@ -1,6 +1,22 @@
 import sizes from "./sizes";
 import bg from "./bg.svg";
 export const PaletteListStyles = {
+  "@global": {
+    ".fade-exit": {
+      opacity: 1
+    },
+    ".fade-exit-active": {
+      opacity: 0,
+      transition: "opacity 500ms ease-in"
+    },
+    ".fade-enter": {
+      opacity: 0
+    },
+    ".fade-enter-active": {
+      opacity: 1,
+      transition: "opacity 5000ms ease-in"
+    }
+  },
   root: {
     height: "100vh",
     display: "flex",

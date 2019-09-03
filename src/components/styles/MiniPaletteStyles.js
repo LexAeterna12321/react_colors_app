@@ -13,7 +13,7 @@ export const MiniPaletteStyles = {
       opacity: 1
     },
     "&:hover": {
-      boxShadow: "0 0 3px 2px rgba(0,0,0,.5)"
+      boxShadow: "0 0 8px 1px rgba(255,255,255,.5)"
     }
   },
   colors: {
@@ -50,7 +50,7 @@ export const MiniPaletteStyles = {
     top: 0,
     right: 0,
     zIndex: 2,
-    color: "#ccc",
+    color: "#ddd",
     backgroundColor: "#eb3d30",
     width: "40px",
     height: "40px",
