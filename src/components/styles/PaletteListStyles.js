@@ -25,7 +25,7 @@ export const PaletteListStyles = {
     backgroundColor: "#000022",
     /* background by SVGBackgrounds.com */
     backgroundImage: `url(${bg})`,
-    overflow: "scroll",
+    overflowY: "scroll",
     backgroundSize: "cover"
   },
 
