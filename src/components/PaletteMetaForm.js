@@ -31,59 +31,70 @@ const PaletteMetaForm = ({
 
   const savePalette = emoji => {
     handleSubmit(newPaletteName, emoji.native);
+    setStage("");
   };
 
   const renderCurrentStage = () => {
-    return stage === "form" ? (
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="form-dialog-title"
-      >
-        <DialogTitle id="form-dialog-title">Choose a Palette Name</DialogTitle>{" "}
-        <ValidatorForm onSubmit={changeStage}>
-          <DialogContent>
-            <DialogContentText>
-              Please enter a name for your new beautiful palette. Make sure it's
-              unique.
-            </DialogContentText>
-            <TextValidator
-              value={newPaletteName}
-              name="newPaletteName"
-              label="Palette Name"
-              fullWidth
-              margin="normal"
-              onChange={handleChange}
-              validators={["required", "isPaletteNameUnique"]}
-              errorMessages={[
-                "Enter Palette Name",
-                "Palette Name already used"
-              ]}
-            />
-          </DialogContent>
+    if (stage === "form") {
+      return (
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="form-dialog-title"
+        >
+          <DialogTitle id="form-dialog-title">
+            Choose a Palette Name
+          </DialogTitle>{" "}
+          <ValidatorForm onSubmit={changeStage}>
+            <DialogContent>
+              <DialogContentText>
+                Please enter a name for your new beautiful palette. Make sure
+                it's unique.
+              </DialogContentText>
+              <TextValidator
+                value={newPaletteName}
+                name="newPaletteName"
+                label="Palette Name"
+                fullWidth
+                margin="normal"
+                onChange={handleChange}
+                validators={["required", "isPaletteNameUnique"]}
+                errorMessages={[
+                  "Enter Palette Name",
+                  "Palette Name already used"
+                ]}
+              />
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleClose} color="primary">
+                Cancel
+              </Button>
+              <Button variant="contained" color="primary" type="submit">
+                Save Palette
+              </Button>
+            </DialogActions>{" "}
+          </ValidatorForm>
+        </Dialog>
+      );
+    } else if (stage === "emoji") {
+      return (
+        <Dialog open={open} onClose={handleClose}>
+          <DialogTitle id="form-dialog-title">
+            Click on emoji to save your palette
+          </DialogTitle>{" "}
+          <Picker
+            onSelect={savePalette}
+            title="Pick emoji..."
+            emoji="point_up"
+          />
           <DialogActions>
             <Button onClick={handleClose} color="primary">
               Cancel
             </Button>
-            <Button variant="contained" color="primary" type="submit">
-              Save Palette
-            </Button>
           </DialogActions>{" "}
-        </ValidatorForm>
-      </Dialog>
-    ) : (
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle id="form-dialog-title">
-          Click on emoji to save your palette
-        </DialogTitle>{" "}
-        <Picker onSelect={savePalette} title="Pick emoji..." emoji="point_up" />
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Cancel
-          </Button>
-        </DialogActions>{" "}
-      </Dialog>
-    );
+        </Dialog>
+      );
+    }
   };
 
   return <div>{renderCurrentStage()}</div>;
