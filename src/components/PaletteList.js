@@ -57,7 +57,7 @@ export class PaletteList extends Component {
                   {...palette}
                   key={palette.id}
                   id={palette.id}
-                  goToPalette={() => this.goToPalette(palette.id)}
+                  goToPalette={this.goToPalette}
                 />
               </CSSTransition>
             ))}

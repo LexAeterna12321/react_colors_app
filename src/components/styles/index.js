@@ -6,3 +6,4 @@ export * from "./ColoBoxStyles";
 export * from "./NavbarStyles";
 export * from "./PaletteFooterStyles";
 export * from "./DraggableColorBoxStyles";
+export * from "./PageStyles";

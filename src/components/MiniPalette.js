@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import DeleteForeverSharpIcon from "@material-ui/icons/DeleteForeverSharp";
 import { withStyles } from "@material-ui/styles";
 import { MiniPaletteStyles } from "./styles";
 
-function MiniPalette(props) {
+const MiniPalette = memo(props => {
   const {
     classes,
     paletteName,
@@ -27,8 +27,10 @@ function MiniPalette(props) {
     openDialog(id);
   };
 
+  const handleClick = () => goToPalette(id);
+
   return (
-    <div className={classes.root} onClick={goToPalette}>
+    <div className={classes.root} onClick={handleClick}>
       <DeleteForeverSharpIcon
         className={classes.deleteIcon}
         onClick={handlePaletteDelete}
@@ -41,6 +43,6 @@ function MiniPalette(props) {
       </h5>
     </div>
   );
-}
+});
 
 export default withStyles(MiniPaletteStyles)(MiniPalette);
