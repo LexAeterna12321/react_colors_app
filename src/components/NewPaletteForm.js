@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 import React, { useState } from "react";
 import clsx from "clsx";
 import PaletteFormNav from "./PaletteFormNav";
@@ -5,18 +6,18 @@ import Drawer from "@material-ui/core/Drawer";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import Button from "@material-ui/core/Button";
 import DraggableColorList from "./DraggableColorList";
 import ColorPickerForm from "./ColorPickerForm";
 import arrayMove from "array-move";
 import NewPaletteFormStyles from "./styles/NewPaletteFormStyles";
+import seedColors from "../utils/seedColors";
 
 const NewPaletteForm = props => {
   const classes = NewPaletteFormStyles();
   const [open, setOpen] = useState(false);
-  const [colors, setColors] = useState(props.palettes[0].colors);
+  const [colors, setColors] = useState(seedColors[0].colors);
 
   const isPaletteFull = colors.length >= props.maxColors;
 
@@ -48,14 +49,22 @@ const NewPaletteForm = props => {
   };
 
   const addRandomColor = () => {
-    const randomPaletteIndex = Math.floor(
-      Math.random() * props.palettes.length
-    );
-    const randomPalette = props.palettes[randomPaletteIndex];
-    const randomColorIndex = Math.floor(
-      Math.random() * randomPalette.colors.length
-    );
-    const randomColor = randomPalette.colors[randomColorIndex];
+    let randomPaletteIndex, randomPalette, randomColorIndex, randomColor;
+    let isColorUnique = false;
+
+    while (!isColorUnique) {
+      randomPaletteIndex = Math.floor(Math.random() * props.palettes.length);
+      randomPalette = props.palettes[randomPaletteIndex];
+
+      randomColorIndex = Math.floor(
+        Math.random() * randomPalette.colors.length
+      );
+      randomColor = randomPalette.colors[randomColorIndex];
+
+      isColorUnique = !colors.some(
+        color => color.color.toLowerCase() === randomColor.color.toLowerCase()
+      );
+    }
 
     setColors([...colors, randomColor]);
   };

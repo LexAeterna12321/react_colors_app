@@ -36,7 +36,6 @@ export const DraggableColorBoxStyles = {
     width: "100%",
     left: 0,
     bottom: 0,
-    color: "#000",
     letterSpacing: "1px",
     fontSize: "12px",
     display: "flex",

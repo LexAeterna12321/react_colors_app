@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import Palette from "./components/Palette";
-import seedColors from "./utils/seedColors";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Route, Switch } from "react-router-dom";
 import { generatePalette } from "./utils/colorHelpers";
+import Palette from "./components/Palette";
 import PaletteList from "./components/PaletteList";
 import SingleColorPalette from "./components/SingleColorPalette";
 import NewPaletteForm from "./components/NewPaletteForm";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Page from "./components/Page";
+
+import seedColors from "./utils/seedColors";
 
 class App extends Component {
   constructor(props) {
@@ -61,7 +62,7 @@ class App extends Component {
                     <Page>
                       <NewPaletteForm
                         savePalette={this.savePalette}
-                        palettes={palettes}
+                        palettes={seedColors}
                         {...routeProps}
                       />
                     </Page>
@@ -103,6 +104,17 @@ class App extends Component {
                         palette={generatePalette(
                           this.findPalette(routeProps.match.params.paletteId)
                         )}
+                      />
+                    </Page>
+                  )}
+                />
+                <Route
+                  render={routeProps => (
+                    <Page>
+                      <PaletteList
+                        palettes={palettes}
+                        {...routeProps}
+                        deletePalette={this.deletePalette}
                       />
                     </Page>
                   )}

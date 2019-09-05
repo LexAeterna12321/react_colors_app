@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import MiniPalette from "./MiniPalette";
 import { withStyles } from "@material-ui/styles";
-import { PaletteListStyles } from "./styles";
 import { Link } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import List from "@material-ui/core/List";
@@ -15,6 +14,7 @@ import CheckIcon from "@material-ui/icons/Check";
 import CloseIcon from "@material-ui/icons/Close";
 import blue from "@material-ui/core/colors/blue";
 import red from "@material-ui/core/colors/red";
+import { PaletteListStyles } from "./styles";
 
 export class PaletteList extends Component {
   state = {
@@ -47,7 +47,7 @@ export class PaletteList extends Component {
         <div className={classes.container}>
           <nav className={classes.nav}>
             <h1 className={classes.heading}>React Colors</h1>
-            <Link to="/palette/new"> Create Palette</Link>
+            <Link to="/palette/new">Create Palette</Link>
           </nav>
           <TransitionGroup className={classes.palettes}>
             {palettes.map(palette => (

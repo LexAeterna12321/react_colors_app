@@ -49,6 +49,7 @@ export const PaletteListStyles = {
   heading: { fontSize: "2rem" },
   palettes: {
     width: "100%",
+
     display: "grid",
     gridTemplateColumns: "repeat(3,1fr)",
     gridGap: "2rem",
