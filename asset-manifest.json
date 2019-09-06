@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/react_colors_app/static/css/main.dd5d30ec.chunk.css",
+    "main.js": "/react_colors_app/static/js/main.a1d359e8.chunk.js",
+    "main.js.map": "/react_colors_app/static/js/main.a1d359e8.chunk.js.map",
+    "runtime~main.js": "/react_colors_app/static/js/runtime~main.af3f579c.js",
+    "runtime~main.js.map": "/react_colors_app/static/js/runtime~main.af3f579c.js.map",
+    "static/css/2.e337d257.chunk.css": "/react_colors_app/static/css/2.e337d257.chunk.css",
+    "static/js/2.587b358c.chunk.js": "/react_colors_app/static/js/2.587b358c.chunk.js",
+    "static/js/2.587b358c.chunk.js.map": "/react_colors_app/static/js/2.587b358c.chunk.js.map",
+    "index.html": "/react_colors_app/index.html",
+    "precache-manifest.9eb3fd4a1330dcdefad84ec0ed5ed8ba.js": "/react_colors_app/precache-manifest.9eb3fd4a1330dcdefad84ec0ed5ed8ba.js",
+    "service-worker.js": "/react_colors_app/service-worker.js",
+    "static/css/2.e337d257.chunk.css.map": "/react_colors_app/static/css/2.e337d257.chunk.css.map",
+    "static/css/main.dd5d30ec.chunk.css.map": "/react_colors_app/static/css/main.dd5d30ec.chunk.css.map",
+    "static/media/bg.svg": "/react_colors_app/static/media/bg.bb46f23f.svg"
+  }
+}
